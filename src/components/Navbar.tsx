@@ -101,17 +101,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
 
           {/* Zone 3: Primary Action Button */}
           <div className="hidden sm:flex items-center space-x-3 shrink-0">
-            <a
-              href={`https://wa.me/${COMPANY_INFO.phones[0].raw}?text=${encodeURIComponent("Hola FERMAELEC, deseo solicitar una cotización para mi proyecto eléctrico.")}`}
-              target="_blank"
-              rel="noreferrer"
+            <button
+              onClick={() => onOpenQuoteModal()}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0B2A6B] text-white text-sm font-medium shadow-sm hover:bg-[#1D4FD8] hover:shadow-md transition-all duration-300 group cursor-pointer"
             >
               <span>Solicita una cotización</span>
               <span className="flex items-center justify-center w-5 h-5 rounded-full bg-white/20 text-white text-xs group-hover:translate-x-0.5 transition-transform">
                 &gt;
               </span>
-            </a>
+            </button>
           </div>
 
           {/* Mobile menu trigger */}
@@ -161,16 +159,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
               </div>
 
               <div className="pt-4 border-t border-slate-100 flex flex-col gap-3">
-                <a
-                  href={`https://wa.me/${COMPANY_INFO.phones[0].raw}?text=${encodeURIComponent("Hola FERMAELEC, deseo solicitar una cotización para mi proyecto eléctrico.")}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="w-full py-3 rounded-full bg-[#0B2A6B] text-white font-medium flex items-center justify-center gap-2 shadow-md"
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onOpenQuoteModal();
+                  }}
+                  className="w-full py-3 rounded-full bg-[#0B2A6B] text-white font-medium flex items-center justify-center gap-2 shadow-md cursor-pointer"
                 >
                   <span>Solicita una cotización</span>
                   <ChevronRight className="w-4 h-4" />
-                </a>
+                </button>
 
                 <a
                   href={`https://wa.me/${COMPANY_INFO.phones[0].raw}`}

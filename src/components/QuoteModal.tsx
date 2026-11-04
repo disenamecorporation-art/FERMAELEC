@@ -85,10 +85,6 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                 <X className="w-5 h-5" />
               </button>
 
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-amber-300 text-xs font-normal tracking-wider uppercase mb-2">
-                <Sparkles className="w-3.5 h-3.5" />
-                Atención Inmediata
-              </span>
               <h2 className="text-2xl sm:text-3xl font-light">Solicita tu Cotización</h2>
               <p className="text-blue-100 text-sm font-light mt-1">
                 Recibe asesoría técnica personalizada y presupuesto a la medida.

@@ -244,17 +244,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenQuoteModal }) => {
 
               {/* Orange Pill Button */}
               <div className="shrink-0">
-                <a
-                  href={`https://wa.me/${COMPANY_INFO.phones[0].raw}?text=${encodeURIComponent("Hola FERMAELEC, deseo solicitar una cotización para mi proyecto eléctrico.")}`}
-                  target="_blank"
-                  rel="noreferrer"
+                <button
+                  onClick={() => onOpenQuoteModal()}
                   className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#F7931E] to-[#e8810c] text-white text-base font-medium shadow-xl shadow-amber-500/30 hover:scale-105 active:scale-95 transition-all duration-300 group cursor-pointer"
                 >
                   <span>Solicita una cotización</span>
                   <span className="flex items-center justify-center w-6 h-6 rounded-full bg-white/20 text-white text-xs group-hover:translate-x-1 transition-transform">
                     &gt;
                   </span>
-                </a>
+                </button>
               </div>
 
             </div>

@@ -10,7 +10,7 @@ export const COMPANY_INFO = {
     "ventas@fermaelec.net"
   ],
   phones: [
-    { label: "Ventas / WhatsApp", number: "+58 0414-383.38.86", raw: "584143833886" },
+    { label: "Ventas / WhatsApp", number: "+58 0424-649.74.82", raw: "584246497482" },
     { label: "Oficina Anaco", number: "+58 0282-424.86.14", raw: "582824248614" },
     { label: "Planta / Administración", number: "+58 0282-425.71.15", raw: "582824257115" }
   ],

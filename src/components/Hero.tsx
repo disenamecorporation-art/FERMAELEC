@@ -128,7 +128,7 @@ export const Hero: React.FC<HeroProps> = ({
             </button>
 
             <button
-              onClick={handleDirectWhatsApp}
+              onClick={() => onOpenQuoteModal()}
               className="inline-flex items-center gap-2 sm:gap-3 px-5 sm:px-7 py-3 sm:py-3.5 rounded-full bg-white/90 border-2 border-[#1D4FD8] text-[#0B2A6B] text-xs sm:text-base font-semibold hover:bg-blue-50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 group cursor-pointer shadow-sm"
             >
               <span>Solicita una cotización</span>

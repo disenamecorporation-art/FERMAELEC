@@ -18,11 +18,11 @@ export const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="relative bg-white pt-16 pb-20 overflow-hidden border-t border-slate-100">
+    <footer className="relative bg-white pt-16 pb-20 overflow-hidden border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Main Footer Row (Identical layout to screenshot) */}
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 pb-10 border-b border-slate-100">
+        {/* Main Footer Row */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 pb-10 border-b border-slate-200">
           
           {/* Left: Brand Logo */}
           <div className="shrink-0">
@@ -36,13 +36,13 @@ export const Footer: React.FC = () => {
             </NavLink>
           </div>
 
-          {/* Center: Navigation Links */}
-          <nav className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-sm text-slate-600">
+          {/* Center: Navigation Links (Darker and bolder per user request) */}
+          <nav className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-sm sm:text-base font-semibold text-[#0B2A6B]">
             {navItems.map((item) => (
               <NavLink
                 key={item.path}
                 to={item.path}
-                className="hover:text-[#0B2A6B] transition-colors"
+                className="hover:text-[#F7931E] transition-colors"
               >
                 {item.name}
               </NavLink>
@@ -56,7 +56,7 @@ export const Footer: React.FC = () => {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-full bg-blue-50 text-[#0B2A6B] flex items-center justify-center hover:bg-[#0B2A6B] hover:text-white transition-all duration-300 shadow-sm"
+                className="w-10 h-10 rounded-full bg-blue-100 text-[#0B2A6B] flex items-center justify-center hover:bg-[#0B2A6B] hover:text-white transition-all duration-300 shadow-sm"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
@@ -65,7 +65,7 @@ export const Footer: React.FC = () => {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-full bg-blue-50 text-[#0B2A6B] flex items-center justify-center hover:bg-[#F7931E] hover:text-white transition-all duration-300 shadow-sm"
+                className="w-10 h-10 rounded-full bg-amber-100 text-[#0B2A6B] flex items-center justify-center hover:bg-[#F7931E] hover:text-white transition-all duration-300 shadow-sm"
                 aria-label="Instagram"
               >
                 <Instagram className="w-4 h-4" />
@@ -74,35 +74,40 @@ export const Footer: React.FC = () => {
                 href="https://youtube.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-full bg-blue-50 text-[#0B2A6B] flex items-center justify-center hover:bg-[#0B2A6B] hover:text-white transition-all duration-300 shadow-sm"
+                className="w-10 h-10 rounded-full bg-blue-100 text-[#0B2A6B] flex items-center justify-center hover:bg-[#0B2A6B] hover:text-white transition-all duration-300 shadow-sm"
                 aria-label="YouTube"
               >
                 <Youtube className="w-4 h-4" />
               </a>
             </div>
 
-            <div className="h-6 w-[1px] bg-slate-200 hidden sm:block" />
+            <div className="h-6 w-[1px] bg-slate-300 hidden sm:block" />
 
-            <p className="text-xs text-slate-400 text-center sm:text-left">
+            <p className="text-xs sm:text-sm font-semibold text-slate-800 text-center sm:text-left">
               © 2025 Fermaelec. Todos los derechos reservados.
             </p>
           </div>
         </div>
 
-        {/* Company RIF and Location info below */}
-        <div className="mt-6 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 gap-4">
-          <p>RIF: {COMPANY_INFO.rif} | {COMPANY_INFO.address}</p>
-          <button
-            onClick={scrollToTop}
-            className="flex items-center gap-1.5 text-xs text-[#0B2A6B] hover:text-[#F7931E] transition-colors group cursor-pointer"
-          >
-            <span>Volver arriba</span>
-            <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform" />
-          </button>
+        {/* Company RIF, Location info, Credits & Scroll to Top */}
+        <div className="mt-6 flex flex-col md:flex-row items-center justify-between text-xs sm:text-sm text-slate-800 font-medium gap-4">
+          <p>RIF: <span className="font-semibold text-[#0B2A6B]">{COMPANY_INFO.rif}</span> | {COMPANY_INFO.address}</p>
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+            <span className="text-xs text-slate-600 font-semibold">
+              Hecho por <span className="text-[#0B2A6B]">Legaint Corporation</span>
+            </span>
+            <button
+              onClick={scrollToTop}
+              className="flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#0B2A6B] hover:text-[#F7931E] transition-colors group cursor-pointer"
+            >
+              <span>Volver arriba</span>
+              <ArrowUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Decorative SVG Waves at Footer Base (matching screenshot waves) */}
+      {/* Decorative SVG Waves at Footer Base */}
       <div className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none overflow-hidden">
         <svg
           viewBox="0 0 1440 120"

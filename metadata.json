@@ -1,0 +1,6 @@
+{
+  "name": "FERMAELEC - Soluciones Eléctricas Innovadoras",
+  "description": "Soluciones integrales en ingeniería y suministros eléctricos industriales, petroleros, comerciales y residenciales.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

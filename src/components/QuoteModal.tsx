@@ -184,13 +184,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                       className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#1D4FD8] focus:ring-1 focus:ring-[#1D4FD8]"
                     >
                       <option value="">-- Selecciona una opción --</option>
-                      <optgroup label="Servicios de Ingeniería">
-                        <option value="Instalaciones Eléctricas">Instalaciones Eléctricas</option>
-                        <option value="Mantenimiento Eléctrico">Mantenimiento Eléctrico</option>
-                        <option value="Asesoría Técnica">Asesoría Técnica</option>
-                        <option value="Suministro Eléctrico General">Suministro Eléctrico General</option>
-                      </optgroup>
-                      <optgroup label="Categorías de Materiales">
+                      <optgroup label="Categorías de Materiales y Suministros">
                         {PRODUCT_CATEGORIES.map((cat) => (
                           <option key={cat.id} value={cat.title}>
                             {cat.title}

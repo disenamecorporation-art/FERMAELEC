@@ -184,10 +184,11 @@ export const ContactPage: React.FC = () => {
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#1D4FD8] focus:ring-1 focus:ring-[#1D4FD8]"
                   >
                     <option value="">-- Selecciona un interés --</option>
-                    <option value="Suministro Eléctrico">Suministro de Materiales Eléctricos</option>
-                    <option value="Proyecto de Ingeniería">Proyecto / Montaje Eléctrico</option>
-                    <option value="Mantenimiento">Mantenimiento de Instalaciones</option>
-                    <option value="Asesoría Técnica">Asesoría Técnica / Cotización Especial</option>
+                    <option value="Suministro de Materiales Eléctricos">Suministro de Materiales Eléctricos</option>
+                    <option value="Alta, Media y Baja Tensión">Materiales de Alta, Media y Baja Tensión</option>
+                    <option value="Equipos a Prueba de Explosión">Equipos a Prueba de Explosión</option>
+                    <option value="Conductores y Cables Eléctricos">Conductores y Cables Eléctricos</option>
+                    <option value="Cotización por Lote / Proyecto">Cotización por Lote / Proyecto</option>
                   </select>
                 </div>
 

@@ -6,13 +6,11 @@ export const COMPANY_INFO = {
   rif: "J-31267591-8",
   address: "Calle Ecuador, Sector Monterrey, Nº 4-19, Anaco, Edo. Anzoátegui, Venezuela",
   emails: [
-    "fermaelec@fermaelec.net",
-    "ventas@fermaelec.net"
+    "fermaelecca@gmail.com"
   ],
   phones: [
-    { label: "Ventas / WhatsApp", number: "+58 0424-649.74.82", raw: "584246497482" },
-    { label: "Oficina Anaco", number: "+58 0282-424.86.14", raw: "582824248614" },
-    { label: "Planta / Administración", number: "+58 0282-425.71.15", raw: "582824257115" }
+    { label: "WhatsApp / Ventas 1", number: "+58-0414-383.8147", raw: "584143838147" },
+    { label: "WhatsApp / Ventas 2", number: "+58-0424-807.4842", raw: "584248074842" }
   ],
   website: "www.fermaelec.net"
 };

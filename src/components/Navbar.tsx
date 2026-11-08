@@ -30,7 +30,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
   const navItems = [
     { name: 'Inicio', path: '/' },
     { name: 'Nosotros', path: '/nosotros' },
-    { name: 'Servicios', path: '/servicios' },
     { name: 'Productos', path: '/productos' },
     { name: 'Proyectos', path: '/proyectos' },
     { name: 'Contacto', path: '/contacto' },
@@ -47,12 +46,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-8">
           
-          {/* Zone 1: Logo ONLY (no text beside or above, large and clean) */}
-          <NavLink to="/" className="flex items-center shrink-0 group">
+          {/* Zone 1: Logo ONLY (increased size as requested, large and prominent) */}
+          <NavLink to="/" className="flex items-center shrink-0 group py-1">
             <img
               src={LOGO_IMAGE}
               alt="FERMAELEC Logo"
-              className="h-12 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               referrerPolicy="no-referrer"
               onError={(e) => {
                 // Fallback to SVG logo if image load fails

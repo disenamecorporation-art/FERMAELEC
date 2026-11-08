@@ -74,6 +74,30 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenQuoteModal }) => {
         </div>
       </section>
 
+      {/* RESUMEN EMPRESARIAL */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="glass-card rounded-3xl p-8 sm:p-12 border border-slate-100 space-y-4"
+        >
+          <span className="text-xs font-medium tracking-[0.2em] text-[#F7931E] uppercase block">
+            QUIÉNES SOMOS
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-light text-[#0B2A6B]">
+            Soluciones y Materiales Eléctricos para Cada Sector
+          </h2>
+          <p className="text-slate-700 text-base sm:text-lg font-light leading-relaxed">
+            Una empresa dedicada a brindar soluciones eléctricas innovadoras, eficientes y seguras, con productos, insumos y materiales eléctricos en general, enfocadas en satisfacer las necesidades de nuestros clientes con excelencia.
+          </p>
+          <p className="text-slate-700 text-base sm:text-lg font-light leading-relaxed">
+            Contamos con un equipo de profesionales altamente capacitados y una amplia experiencia en el sector Eléctrico industrial, Petrolero, Petroquímica, Gas, Construcción, Comercial y Residencial.
+          </p>
+        </motion.div>
+      </section>
+
       {/* MISIÓN, VISIÓN & POLÍTICA DE CALIDAD */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 mb-24">
         

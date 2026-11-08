@@ -11,7 +11,6 @@ export const Footer: React.FC = () => {
   const navItems = [
     { name: 'Inicio', path: '/' },
     { name: 'Nosotros', path: '/nosotros' },
-    { name: 'Servicios', path: '/servicios' },
     { name: 'Productos', path: '/productos' },
     { name: 'Proyectos', path: '/proyectos' },
     { name: 'Contacto', path: '/contacto' },
@@ -24,13 +23,13 @@ export const Footer: React.FC = () => {
         {/* Main Footer Row */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 pb-10 border-b border-slate-200">
           
-          {/* Left: Brand Logo */}
+          {/* Left: Brand Logo (Increased size) */}
           <div className="shrink-0">
-            <NavLink to="/" className="inline-block">
+            <NavLink to="/" className="inline-block group">
               <img
                 src={LOGO_IMAGE}
                 alt="FERMAELEC Logo"
-                className="h-12 md:h-14 w-auto object-contain"
+                className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 referrerPolicy="no-referrer"
               />
             </NavLink>

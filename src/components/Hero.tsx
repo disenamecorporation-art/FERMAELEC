@@ -1,19 +1,19 @@
 import React, { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'motion/react';
 import { ShieldCheck, Zap, Handshake, Cog } from 'lucide-react';
 import { HERO_IMAGE, COMPANY_INFO } from '../data/companyData';
 
 interface HeroProps {
   onOpenQuoteModal: (category?: string) => void;
-  onNavigateServices: () => void;
   onNavigateAbout: () => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({
   onOpenQuoteModal,
-  onNavigateServices,
   onNavigateAbout,
 }) => {
+  const navigate = useNavigate();
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Parallax scroll effects
@@ -78,7 +78,7 @@ export const Hero: React.FC<HeroProps> = ({
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs md:text-sm font-semibold tracking-[0.2em] sm:tracking-[0.25em] text-[#0B2A6B] uppercase mb-2 sm:mb-4 drop-shadow-xs"
+            className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs md:text-sm font-semibold tracking-[0.2em] sm:tracking-[0.25em] text-[#0B2A6B] uppercase mb-2 sm:mb-4"
           >
             <span>INNOVACIÓN</span>
             <span className="text-[#F7931E] font-bold">•</span>
@@ -104,7 +104,7 @@ export const Hero: React.FC<HeroProps> = ({
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-slate-800 text-sm sm:text-lg md:text-xl font-normal leading-relaxed max-w-lg sm:max-w-xl mb-6 sm:mb-8 drop-shadow-2xs"
+            className="text-slate-800 text-sm sm:text-lg md:text-xl font-normal leading-relaxed max-w-lg sm:max-w-xl mb-6 sm:mb-8"
           >
             En Fermaelec ofrecemos soluciones integrales en ingeniería eléctrica,
             con los más altos estándares de calidad y un equipo comprometido.
@@ -118,10 +118,10 @@ export const Hero: React.FC<HeroProps> = ({
             className="flex flex-wrap items-center gap-3 sm:gap-4"
           >
             <button
-              onClick={onNavigateServices}
+              onClick={() => navigate('/productos')}
               className="inline-flex items-center gap-2 sm:gap-3 px-5 sm:px-7 py-3 sm:py-3.5 rounded-full bg-[#0B2A6B] text-white text-xs sm:text-base font-medium shadow-lg shadow-blue-900/25 hover:bg-[#1D4FD8] hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 group cursor-pointer"
             >
-              <span>Nuestros Servicios</span>
+              <span>Nuestros Productos</span>
               <span className="flex items-center justify-center w-5 sm:w-6 h-5 sm:h-6 rounded-full bg-white/20 text-white text-[10px] sm:text-xs group-hover:translate-x-1 transition-transform">
                 &gt;
               </span>
@@ -172,7 +172,7 @@ export const Hero: React.FC<HeroProps> = ({
 
       {/* 4-BENEFIT BAR */}
       <div className="relative z-20 max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 -mt-4 sm:-mt-10 w-full">
-        <div className="bg-white/95 backdrop-blur-xl rounded-xl sm:rounded-3xl shadow-xl shadow-blue-900/10 border border-slate-100 p-3 sm:p-6 md:p-8">
+        <div className="bg-white rounded-xl sm:rounded-3xl shadow-xl shadow-blue-900/10 border border-slate-200 p-3 sm:p-6 md:p-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 divide-y-0 sm:divide-x divide-slate-100">
             
             {/* Benefit 1 */}
@@ -184,7 +184,7 @@ export const Hero: React.FC<HeroProps> = ({
                 <h3 className="text-xs sm:text-base font-semibold text-[#0B2A6B]">
                   Calidad Garantizada
                 </h3>
-                <p className="text-[10px] sm:text-xs text-slate-500 font-normal mt-0.5 hidden sm:block">
+                <p className="text-[10px] sm:text-xs text-slate-600 font-medium mt-0.5 hidden sm:block">
                   Estándares internacionales COVENIN e IEEE.
                 </p>
               </div>
@@ -199,7 +199,7 @@ export const Hero: React.FC<HeroProps> = ({
                 <h3 className="text-xs sm:text-base font-semibold text-[#0B2A6B]">
                   Soluciones Eficientes
                 </h3>
-                <p className="text-[10px] sm:text-xs text-slate-500 font-normal mt-0.5 hidden sm:block">
+                <p className="text-[10px] sm:text-xs text-slate-600 font-medium mt-0.5 hidden sm:block">
                   Optimización energética y alto rendimiento.
                 </p>
               </div>
@@ -214,7 +214,7 @@ export const Hero: React.FC<HeroProps> = ({
                 <h3 className="text-xs sm:text-base font-semibold text-[#0B2A6B]">
                   Compromiso Total
                 </h3>
-                <p className="text-[10px] sm:text-xs text-slate-500 font-normal mt-0.5 hidden sm:block">
+                <p className="text-[10px] sm:text-xs text-slate-600 font-medium mt-0.5 hidden sm:block">
                   Responsabilidad y puntualidad asegurada.
                 </p>
               </div>
@@ -229,7 +229,7 @@ export const Hero: React.FC<HeroProps> = ({
                 <h3 className="text-xs sm:text-base font-semibold text-[#0B2A6B]">
                   Soporte Especializado
                 </h3>
-                <p className="text-[10px] sm:text-xs text-slate-500 font-normal mt-0.5 hidden sm:block">
+                <p className="text-[10px] sm:text-xs text-slate-600 font-medium mt-0.5 hidden sm:block">
                   Ingenieros capacitados a su disposición.
                 </p>
               </div>

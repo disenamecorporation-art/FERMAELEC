@@ -12,7 +12,6 @@ import { QuoteModal } from './components/QuoteModal';
 
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
-import { ServicesPage } from './pages/ServicesPage';
 import { ProductsPage } from './pages/ProductsPage';
 import { ProjectsPage } from './pages/ProjectsPage';
 import { ContactPage } from './pages/ContactPage';
@@ -75,10 +74,6 @@ export default function App() {
             <Route
               path="/nosotros"
               element={<AboutPage onOpenQuoteModal={() => handleOpenQuoteModal()} />}
-            />
-            <Route
-              path="/servicios"
-              element={<ServicesPage onOpenQuoteModal={handleOpenQuoteModal} />}
             />
             <Route
               path="/productos"

@@ -5,9 +5,15 @@
     --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
 
+  html {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   body {
     font-family: var(--font-sans);
-    font-weight: 300;
+    font-weight: 400;
     color: #1e293b;
     background-color: #ffffff;
     overflow-x: hidden;
@@ -15,31 +21,32 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-sans);
-    font-weight: 300;
+    font-weight: 400;
+  }
+
+  /* Make small captions and muted text crisp and high-contrast */
+  small, .text-xs, .text-sm {
+    text-rendering: geometricPrecision;
   }
 }
 
-/* Glassmorphism Cards */
+/* Clean Solid High-Contrast Glass Cards (eliminating raster blur distortion behind text) */
 .glass-card {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 12px 32px -8px rgba(11, 42, 107, 0.08);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 10px 25px -5px rgba(11, 42, 107, 0.06), 0 8px 10px -6px rgba(11, 42, 107, 0.04);
 }
 
 .glass-card-blue {
-  background: rgba(234, 241, 255, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(29, 79, 216, 0.15);
-  box-shadow: 0 16px 36px -10px rgba(29, 79, 216, 0.1);
+  background: rgba(241, 246, 255, 0.92);
+  border: 1px solid rgba(29, 79, 216, 0.18);
+  box-shadow: 0 10px 25px -5px rgba(29, 79, 216, 0.08);
 }
 
 .glass-nav {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 /* Custom Scrollbar */

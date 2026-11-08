@@ -1,17 +1,8 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
-import {
-  TowerControl as PowerTower,
-  Settings,
-  Lightbulb,
-  Plug,
-  ChevronRight,
-  Sparkles,
-  ArrowRight
-} from 'lucide-react';
 import { Hero } from '../components/Hero';
-import { PANEL_IMAGE, SERVICES, COMPANY_INFO } from '../data/companyData';
+import { COMPANY_INFO } from '../data/companyData';
 
 interface HomePageProps {
   onOpenQuoteModal: (category?: string) => void;
@@ -20,31 +11,15 @@ interface HomePageProps {
 export const HomePage: React.FC<HomePageProps> = ({ onOpenQuoteModal }) => {
   const navigate = useNavigate();
 
-  const getServiceIcon = (iconName: string) => {
-    switch (iconName) {
-      case 'TowerControl':
-        return <PowerTower className="w-10 h-10 text-[#1D4FD8]" />;
-      case 'Settings':
-        return <Settings className="w-10 h-10 text-[#1D4FD8]" />;
-      case 'Lightbulb':
-        return <Lightbulb className="w-10 h-10 text-[#1D4FD8]" />;
-      case 'Plug':
-        return <Plug className="w-10 h-10 text-[#1D4FD8]" />;
-      default:
-        return <Settings className="w-10 h-10 text-[#1D4FD8]" />;
-    }
-  };
-
   return (
     <div className="relative overflow-x-hidden">
       {/* 1. HERO SECTION */}
       <Hero
         onOpenQuoteModal={() => onOpenQuoteModal()}
-        onNavigateServices={() => navigate('/servicios')}
         onNavigateAbout={() => navigate('/nosotros')}
       />
 
-      {/* 2. SOBRE NOSOTROS SECTION (Matching screenshot) */}
+      {/* 2. SOBRE NOSOTROS SECTION (With Energy & Oil Industry visual collage) */}
       <section className="py-20 sm:py-28 relative overflow-hidden bg-white">
         
         {/* Giant semi-transparent pulse-logo in background on the right */}
@@ -58,7 +33,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenQuoteModal }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             
-            {/* Left Column: Organic Electrical Panel Image with Blue Wave Accent */}
+            {/* Left Column: Collage of Energy Companies and Oil Industry */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -66,17 +41,57 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenQuoteModal }) => {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <div className="relative rounded-[36px] overflow-hidden shadow-2xl border-4 border-white bg-slate-100 group">
-                <img
-                  src={PANEL_IMAGE}
-                  alt="Tablero Eléctrico Industrial Fermaelec"
-                  className="w-full h-[380px] sm:h-[460px] object-cover group-hover:scale-105 transition-transform duration-700"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B2A6B]/30 via-transparent to-transparent pointer-events-none" />
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                {/* Photo 1: Elementos de Energía Eléctrica */}
+                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border-2 border-white group h-44 sm:h-56 bg-slate-100">
+                  <img
+                    src="https://www.iberdrola.com/documents/20125/6124441/elementos-energia-electrica-746x419.jpg/23505a33-b82a-4621-f574-d4c6e5374576?t=1786092774583"
+                    alt="Elementos de Energía Eléctrica"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=700';
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B2A6B]/60 via-transparent to-transparent flex items-end p-3">
+                    <span className="text-[11px] sm:text-xs text-white font-medium">Energía Eléctrica</span>
+                  </div>
+                </div>
+
+                {/* Photo 2: Sector Petrolero & Gas */}
+                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border-2 border-white group h-44 sm:h-56 bg-slate-100">
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU5a7u9iz0VvmF7y3UE1tlnMBzR6czhcM77u5Zho-tedyoTk3dOhywr6sR&s=10"
+                    alt="Sector Petrolero y Gas"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=700';
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B2A6B]/60 via-transparent to-transparent flex items-end p-3">
+                    <span className="text-[11px] sm:text-xs text-white font-medium">Sector Petrolero & Gas</span>
+                  </div>
+                </div>
+
+                {/* Photo 3: Instalaciones industriales de generación y potencia */}
+                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border-2 border-white group h-40 sm:h-52 col-span-2">
+                  <img
+                    src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1000"
+                    alt="Equipos de Potencia y Transformadores Industriales"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B2A6B]/70 via-transparent to-transparent flex items-end justify-between p-4">
+                    <span className="text-xs sm:text-sm text-white font-medium">Equipos y Suministros Eléctricos de Alta y Baja Tensión</span>
+                    <span className="hidden sm:inline-block text-[11px] bg-[#F7931E] text-white px-2.5 py-0.5 rounded-full font-medium">Norma COVENIN / IEEE</span>
+                  </div>
+                </div>
               </div>
 
-              {/* Decorative Blue Organic Wave shape underneath image */}
+              {/* Decorative Blue Organic Wave shape underneath collage */}
               <div className="absolute -bottom-6 -left-6 w-3/4 h-24 bg-gradient-to-r from-[#1D4FD8] to-[#0B2A6B] rounded-3xl -z-10 blur-xl opacity-40" />
             </motion.div>
 
@@ -100,13 +115,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenQuoteModal }) => {
                 Somos <span className="font-medium text-[#0B2A6B]">Fermaelec</span>
               </h2>
 
-              {/* Paragraphs */}
-              <p className="text-slate-600 text-base sm:text-lg font-light leading-relaxed">
-                Una empresa dedicada a brindar soluciones eléctricas innovadoras, eficientes y seguras, enfocadas en satisfacer las necesidades de nuestros clientes con excelencia.
+              {/* Paragraphs - Exact requested text */}
+              <p className="text-slate-700 text-base sm:text-lg font-light leading-relaxed">
+                Una empresa dedicada a brindar soluciones eléctricas innovadoras, eficientes y seguras, con productos, insumos y materiales eléctricos en general, enfocadas en satisfacer las necesidades de nuestros clientes con excelencia.
               </p>
 
-              <p className="text-slate-600 text-base sm:text-lg font-light leading-relaxed">
-                Contamos con un equipo de profesionales altamente capacitados y una amplia experiencia en el sector eléctrico industrial, comercial y residencial.
+              <p className="text-slate-700 text-base sm:text-lg font-light leading-relaxed">
+                Contamos con un equipo de profesionales altamente capacitados y una amplia experiencia en el sector Eléctrico industrial, Petrolero, Petroquímica, Gas, Construcción, Comercial y Residencial
               </p>
 
               {/* Orange Pill Button */}
@@ -124,78 +139,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenQuoteModal }) => {
             </motion.div>
 
           </div>
-        </div>
-      </section>
-
-      {/* 3. NUESTROS SERVICIOS SECTION (Matching screenshot) */}
-      <section className="py-20 sm:py-28 relative bg-gradient-to-b from-white via-blue-50/40 to-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
-          {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-            <div>
-              <span className="text-xs sm:text-sm font-medium tracking-[0.25em] text-[#F7931E] uppercase block mb-1">
-                NUESTROS SERVICIOS
-              </span>
-            </div>
-
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-[#0B2A6B]">
-              Lo que <span className="font-medium text-[#0B2A6B]">hacemos</span>
-            </h2>
-
-            <p className="text-slate-600 text-base sm:text-lg font-light">
-              Brindamos una amplia gama de servicios eléctricos para distintos sectores:
-            </p>
-          </div>
-
-          {/* 4 Glass Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            {SERVICES.map((service, index) => (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                onClick={() => navigate('/servicios')}
-                className="glass-card rounded-3xl p-8 flex flex-col justify-between hover:shadow-2xl hover:border-blue-200 transition-all duration-300 cursor-pointer group"
-              >
-                <div>
-                  {/* Icon */}
-                  <div className="w-16 h-16 rounded-2xl bg-blue-50 text-[#1D4FD8] flex items-center justify-center mb-6 group-hover:bg-[#1D4FD8] group-hover:text-white transition-colors duration-300 shadow-sm">
-                    {getServiceIcon(service.icon)}
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="text-xl font-normal text-[#0B2A6B] mb-3 group-hover:text-[#1D4FD8] transition-colors">
-                    {service.title}
-                  </h3>
-
-                  {/* Short Description */}
-                  <p className="text-slate-600 text-sm font-light leading-relaxed">
-                    {service.shortDesc}
-                  </p>
-                </div>
-
-                <div className="mt-8 pt-4 border-t border-slate-100/80 flex items-center gap-2 text-xs font-medium text-[#1D4FD8] group-hover:translate-x-1 transition-transform">
-                  <span>Saber más</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <button
-              onClick={() => navigate('/servicios')}
-              className="inline-flex items-center gap-2 text-sm font-medium text-[#0B2A6B] hover:text-[#F7931E] transition-colors group cursor-pointer"
-            >
-              <span>Ver todos los detalles de servicios</span>
-              <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
-          </div>
-
         </div>
       </section>
 

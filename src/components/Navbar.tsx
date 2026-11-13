@@ -31,7 +31,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
     { name: 'Inicio', path: '/' },
     { name: 'Nosotros', path: '/nosotros' },
     { name: 'Productos', path: '/productos' },
-    { name: 'Proyectos', path: '/proyectos' },
+    { name: 'Clientes', path: '/clientes' },
     { name: 'Contacto', path: '/contacto' },
   ];
 

@@ -12,7 +12,7 @@ export const COMPANY_INFO = {
     { label: "WhatsApp / Ventas 1", number: "+58-0414-383.8147", raw: "584143838147" },
     { label: "WhatsApp / Ventas 2", number: "+58-0424-807.4842", raw: "584248074842" }
   ],
-  website: "www.fermaelec.net"
+  website: "www.fermaelec.com"
 };
 
 export const LOGO_IMAGE = "https://i.postimg.cc/SsxRKZkj/LOGOWEB.png";
@@ -158,60 +158,47 @@ export const PARTNER_BRANDS = [
   "3M", "Elecon", "Burndy", "Klein Tools", "Square D", "Bticino", "Siemens", "Schneider Electric", "ABB", "Crouse-Hinds", "Appleton"
 ];
 
-export const PROJECTS = [
+export const MAIN_CLIENTS = [
   {
     id: 1,
-    title: "Montaje de Subestación Industrial 13.8kV",
-    sector: "Industrial",
-    location: "Zona Industrial Anaco, Anzoátegui",
-    desc: "Instalación completa de transformador de 1500 KVA, celdas de media tensión y tablero principal de distribución con medición digital.",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800"
+    name: "Mendez y Servicios, C.A.",
+    sector: "Servicios Industriales y Petroleros"
   },
   {
     id: 2,
-    title: "Sistemas Eléctricos a Prueba de Explosión en Taladro Petrolero",
-    sector: "Petrolero",
-    location: "Faja Petrolífera del Orinoco",
-    desc: "Adecuación y suministro de luminarias LED antiexplosivas, tableros NEMA 7X y cableado armado en áreas clasificadas Clase I Div 1.",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=800"
+    name: "Constructora Arza, C.A.",
+    sector: "Construcción e Infraestructura"
   },
   {
     id: 3,
-    title: "Alumbrado y Fuerza para Centro Comercial",
-    sector: "Comercial",
-    location: "Barcelona, Anzoátegui",
-    desc: "Tendido de bandejas portacables de aluminio, tableros con breakers de caja moldeada e iluminación LED decorativa e industrial.",
-    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800"
+    name: "Constructora B&P",
+    sector: "Obras Civiles y Proyectos"
   },
   {
     id: 4,
-    title: "Mantenimiento Preventivo de Planta Compresora",
-    sector: "Petrolero",
-    location: "Anaco, Edo. Anzoátegui",
-    desc: "Termografía infrarroja, pruebas de resistencia de aislamiento en motores de media tensión y ajuste de relés de protección.",
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800"
+    name: "HB Improca",
+    sector: "Ingeniería y Procura Industrial"
   },
   {
     id: 5,
-    title: "Sistemas de Puesta a Tierra y Malla de Cobre",
-    sector: "Industrial",
-    location: "Maturín, Monagas",
-    desc: "Construcción de malla a tierra con soldadura exotérmica cadweld y electrodos de cobre para protección contra descargas atmosféricas.",
-    image: "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&q=80&w=800"
+    name: "Materiales Industriales Falcón, C.A.",
+    sector: "Suministros y Sector Industrial"
   },
   {
     id: 6,
-    title: "Proyecto Residencial de Lujo - Acometida e Iluminación",
-    sector: "Residencial",
-    location: "Lechería, Anzoátegui",
-    desc: "Instalación de tableros empotrados, domótica de control de iluminación y protección contra sobretensiones para complejo de villas.",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800"
+    name: "GP Servicios Industriales, C.A.",
+    sector: "Servicios Petroleros e Industriales"
+  },
+  {
+    id: 7,
+    name: "Técnicos Especializado, C.A.",
+    sector: "Mantenimiento y Operaciones Técnicas"
   }
 ];
 
 export const STATS = [
   { value: 18, suffix: "+", label: "Años de Experiencia" },
-  { value: 650, suffix: "+", label: "Proyectos Ejecutados" },
+  { value: 650, suffix: "+", label: "Despachos y Suministros" },
   { value: 100, suffix: "%", label: "Garantía de Calidad" },
   { value: 24, suffix: "/7", label: "Soporte y Atención" }
 ];

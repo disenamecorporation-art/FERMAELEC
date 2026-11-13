@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
     { name: 'Inicio', path: '/' },
     { name: 'Nosotros', path: '/nosotros' },
     { name: 'Productos', path: '/productos' },
-    { name: 'Proyectos', path: '/proyectos' },
+    { name: 'Clientes', path: '/clientes' },
     { name: 'Contacto', path: '/contacto' },
   ];
 

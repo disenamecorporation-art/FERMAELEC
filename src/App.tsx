@@ -13,7 +13,7 @@ import { QuoteModal } from './components/QuoteModal';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { ProductsPage } from './pages/ProductsPage';
-import { ProjectsPage } from './pages/ProjectsPage';
+import { ClientsPage } from './pages/ClientsPage';
 import { ContactPage } from './pages/ContactPage';
 
 export default function App() {
@@ -80,8 +80,8 @@ export default function App() {
               element={<ProductsPage onOpenQuoteModal={handleOpenQuoteModal} />}
             />
             <Route
-              path="/proyectos"
-              element={<ProjectsPage onOpenQuoteModal={handleOpenQuoteModal} />}
+              path="/clientes"
+              element={<ClientsPage onOpenQuoteModal={handleOpenQuoteModal} />}
             />
             <Route
               path="/contacto"

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Target, Eye, Award, CheckCircle } from 'lucide-react';
-import { COMPANY_INFO, STATS } from '../data/companyData';
+import { COMPANY_INFO } from '../data/companyData';
 
 interface AboutPageProps {
   onOpenQuoteModal: () => void;
@@ -55,23 +55,22 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenQuoteModal }) => {
         </div>
       </section>
 
-      {/* STATS COUNT-UP STRIP */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20 mb-20">
-        <div className="glass-card rounded-3xl p-8 shadow-xl border border-blue-100 bg-white/90">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-y sm:divide-y-0 sm:divide-x divide-slate-100">
-            {STATS.map((stat, idx) => (
-              <div key={idx} className="text-center pt-4 sm:pt-0">
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#0B2A6B]">
-                  {stat.value}
-                  <span className="text-[#F7931E] font-medium">{stat.suffix}</span>
-                </div>
-                <div className="text-xs sm:text-sm text-slate-500 font-light mt-1">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
+      {/* EXPERIENCE & TRAYECTORY HIGHLIGHT */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20 mb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="glass-card rounded-3xl p-8 sm:p-12 shadow-xl border border-blue-100 bg-white/95 text-center"
+        >
+          <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-amber-50 text-[#F7931E] flex items-center justify-center shadow-sm">
+            <Award className="w-7 h-7" />
           </div>
-        </div>
+          <p className="text-lg sm:text-xl md:text-2xl font-light text-[#0B2A6B] leading-relaxed">
+            La experiencia y trayectoria por más de 20 años en el mercado eléctrico nacional, te da la confianza de que Cuentas con aliado eléctrico confiable.
+          </p>
+        </motion.div>
       </section>
 
       {/* RESUMEN EMPRESARIAL */}

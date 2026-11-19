@@ -310,12 +310,15 @@ export const ContactPage: React.FC = () => {
           <h2 className="text-3xl font-light text-[#0B2A6B] mt-1">
             Encuéntranos en Anaco, Anzoátegui
           </h2>
+          <p className="text-slate-600 text-sm mt-2 font-mono">
+            Coordenadas GPS: 9°28'01.0"N 64°28'51.6"W (9.466931, -64.480997)
+          </p>
         </div>
 
         <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white h-96 relative">
           <iframe
             title="Mapa Fermaelec Anaco"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31481.545199616336!2d-64.4815488!3d9.4385153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c322b7c430a9117%3A0xb3082a5f6eefc46a!2sAnaco%2C%20Anzoategui%2C%20Venezuela!5e0!3m2!1ses!2s!4v1700000000000!5m2!1ses!2s"
+            src="https://maps.google.com/maps?q=9.466931,-64.480997&z=17&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0 }}
